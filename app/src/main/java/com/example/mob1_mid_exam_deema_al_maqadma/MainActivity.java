@@ -1,13 +1,12 @@
-package com.example.artspace;
+package com.example.mob1_mid_exam_deema_al_maqadma;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,16 +15,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    // عناصر الواجهة
     private TextView tvCounter, tvArtworkTitle, tvArtistInfo;
     private ImageView ivArtwork;
     private Button btnPrevious, btnNext;
 
-    // قائمة اللوحات الفنية ومؤشر اللوحة الحالية
     private ArrayList<Artwork> artworkList;
     private int currentIndex = 0;
 
-    // مفتاح الحفظ عند تدوير الشاشة
     private static final String KEY_CURRENT_INDEX = "KEY_CURRENT_INDEX";
 
     @Override
@@ -33,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 1. ربط عناصر الواجهة
+        // ربط العناصر
         tvCounter = findViewById(R.id.tvCounter);
         ivArtwork = findViewById(R.id.ivArtwork);
         tvArtworkTitle = findViewById(R.id.tvArtworkTitle);
@@ -41,18 +37,17 @@ public class MainActivity extends AppCompatActivity {
         btnPrevious = findViewById(R.id.btnPrevious);
         btnNext = findViewById(R.id.btnNext);
 
-        // 2. تهيئة بيانات اللوحات الست (بيانات مطابقة للصور المرجعية)
+        // تعبئة البيانات
         loadArtworksData();
 
-        // 3. استرجاع الحالة عند تدوير الشاشة (Lifecycle & State Management)
+        // استعادة الحالة عند دوران الشاشة
         if (savedInstanceState != null) {
             currentIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX, 0);
         }
 
-        // عرض اللوحة الحالية وتحديث الأزرار
         updateArtworkUI();
 
-        // 4. برمجة زر التالي (Next)
+        // زر التالي
         btnNext.setOnClickListener(v -> {
             if (currentIndex < artworkList.size() - 1) {
                 currentIndex++;
@@ -60,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 5. برمجة زر السابق (Previous)
+        // زر السابق
         btnPrevious.setOnClickListener(v -> {
             if (currentIndex > 0) {
                 currentIndex--;
@@ -68,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 6. برمجة النقر على الصورة للانتقال للشاشة الثانية (Explicit Intent)
+        // النقر على الصورة للانتقال للشاشة الثانية (Explicit Intent)
         ivArtwork.setOnClickListener(v -> {
             Artwork current = artworkList.get(currentIndex);
             Intent intent = new Intent(MainActivity.this, ArtworkDetailsActivity.class);
@@ -81,14 +76,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // حفظ مؤشر اللوحة الحالية قبل تدمير الشاشة عند التدوير
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_CURRENT_INDEX, currentIndex);
     }
 
-    // تعبئة بيانات اللوحات الست
     private void loadArtworksData() {
         artworkList = new ArrayList<>();
         artworkList.add(new Artwork(R.drawable.art1, "Deep Field Stellar Deaths", "Smacs Carin", "2021", "https://webbtelescope.org/"));
@@ -99,36 +92,32 @@ public class MainActivity extends AppCompatActivity {
         artworkList.add(new Artwork(R.drawable.art6, "Hubble Ngc Flat Final", "Sonay Billan", "2019", "https://www.spacetelescope.org/"));
     }
 
-    // تحديث بيانات اللوحة وأزرار التحكم ديناميكياً
-    @SuppressLint("SetTextI18n")
     private void updateArtworkUI() {
         Artwork current = artworkList.get(currentIndex);
 
-        // تحديث النصوص والصورة
-        tvCounter.setText((currentIndex + 1) + " / " + artworkList.size());
+        tvCounter.setText(getString(R.string.counter_format, currentIndex + 1, artworkList.size()));
         ivArtwork.setImageResource(current.getImageResId());
         tvArtworkTitle.setText(current.getTitle());
-        tvArtistInfo.setText(current.getArtist() + " (" + current.getYear() + ")");
+        tvArtistInfo.setText(getString(R.string.artist_info_format, current.getArtist(), current.getYear()));
 
-        // التحكم في تمكين/تعطيل زر Previous (معطل في اللوحة الأولى 1/6)
+        // زر Previous معطل عند 1/6
         boolean hasPrev = (currentIndex > 0);
         btnPrevious.setEnabled(hasPrev);
-        setButtonState(btnPrevious, hasPrev);
+        setButtonStyle(btnPrevious, hasPrev);
 
-        // التحكم في تمكين/تعطيل زر Next (معطل في اللوحة الأخيرة 6/6)
+        // زر Next معطل عند 6/6
         boolean hasNext = (currentIndex < artworkList.size() - 1);
         btnNext.setEnabled(hasNext);
-        setButtonState(btnNext, hasNext);
+        setButtonStyle(btnNext, hasNext);
     }
 
-    // دالة مساعدة لضبط لون الزر عند التفعيل والتعطيل
-    private void setButtonState(Button button, boolean isEnabled) {
+    private void setButtonStyle(Button button, boolean isEnabled) {
         if (isEnabled) {
-            button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.btn_active_color)));
-            button.setTextColor(ContextCompat.getColor(this, R.color.btn_text_active));
+            button.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#8D4E24")));
+            button.setTextColor(Color.WHITE);
         } else {
-            button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.btn_disabled_color)));
-            button.setTextColor(ContextCompat.getColor(this, R.color.btn_text_disabled));
+            button.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#E0D7D0")));
+            button.setTextColor(Color.parseColor("#9E9E9E"));
         }
     }
 }
