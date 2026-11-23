@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#8D4E24</color>
-    <color name="primary_dark">#5D2E10</color>
+    <!-- ألوان الخلفيات -->
+    <color name="art_screen_bg">#FAF4EC</color>      <!-- الخلفية الكريمية الدافئة -->
+    <color name="art_card_white">#FFFFFF</color>     <!-- البرواز الأبيض -->
+    <color name="art_info_box_bg">#FDEEE9</color>    <!-- الصندوق الخوخي الناعم -->
 
-    <!-- ألوان واجهة ArtSpace المرجعية -->
-    <color name="art_screen_bg">#FAF4EC</color>      <!-- خلفية الشاشة كريمية فاتحة -->
-    <color name="art_card_white">#FFFFFF</color>     <!-- إطار الصورة أبيض ناصع -->
-    <color name="art_info_box_bg">#FDEFEA</color>    <!-- خلفية صندوق الوصف الخوخي الفاتح -->
-    <color name="art_title_color">#212121</color>    <!-- لون عنوان اللوحة -->
-    <color name="art_sub_color">#555555</color>      <!-- لون اسم الفنان والسنة -->
+    <!-- ألوان النصوص -->
+    <color name="art_title_color">#1C1C1C</color>    <!-- عنوان اللوحة -->
+    <color name="art_sub_color">#555555</color>      <!-- اسم الفنان والسنة -->
 
-    <!-- ألوان الأزرار (Active vs Disabled) -->
-    <color name="btn_active_color">#8D4E24</color>   <!-- بني غامق عند التفعيل -->
-    <color name="btn_disabled_color">#E0D7D0</color> <!-- بيج باهت عند التعطيل -->
-    <color name="btn_text_active">#FFFFFF</color>
-    <color name="btn_text_disabled">#9E9E9E</color>
+    <!-- ألوان الأزرار المطابقة للصور المرجعية -->
+    <color name="btn_active_color">#8D4E24</color>   <!-- بني دافئ للزر المفعّل -->
+    <color name="btn_disabled_color">#E6DFD7</color> <!-- بيج باهت للزر المعطّل -->
+    <color name="btn_text_active">#FFFFFF</color>    <!-- نص أبيض -->
+    <color name="btn_text_disabled">#9E948C</color>  <!-- نص رمادي دافئ -->
 </resources>

@@ -12,4 +12,16 @@
     <string name="artist_year_format">By: %1$s • Year: %2$s</string>
     <string name="counter_format">%1$d / %2$d</string>
     <string name="artist_info_format">%1$s (%2$s)</string>
+    <string name="title_placeholder">Title Here</string>
+    <string name="artist_placeholder">Artist (Year)</string>
+    <string name="artwork_details">Artwork Details</string>
+    <string name="artist_year">Artist (Year)</string>
+    <string name="title_here">Title Here</string>
+    <string name="website">Website</string>
+    <string name="back">Back</string>
+    <string name="deep_field_stellar_deaths_">Deep Field Stellar Deaths</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="smacs_carin_2021_">Smacs Carin (2021)</string>
+    <string name="artwork_display_">Artwork Display</string>
 </resources>
