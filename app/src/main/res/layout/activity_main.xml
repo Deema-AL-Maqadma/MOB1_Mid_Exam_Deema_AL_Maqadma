@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:fitsSystemWindows="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,15 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAF4EC"
-    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <!-- عداد اللوحات (1 / 6) -->
+    <!-- 1. عداد اللوحات في الأعلى -->
     <TextView
         android:id="@+id/tvCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/_1_6"
         android:textColor="#555555"
         android:textSize="18sp"
@@ -25,12 +23,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- إطار اللوحة الأبيض -->
+    <!-- 2. برواز اللوحة الفنية: وضعنا هوامش صريحة 24dp يميناً ويساراً -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardArtworkFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="4dp"
@@ -44,18 +44,21 @@
             android:id="@+id/ivArtwork"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="16dp"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/artwork_display"
             android:scaleType="centerCrop"
             android:src="@drawable/art1" />
     </androidx.cardview.widget.CardView>
 
-    <!-- صندوق معلومات اللوحة (خوخي ناعم) -->
+    <!-- 3. صندوق معلومات اللوحة: بنفس الهامش الجانبي 24dp ليتطابق مع برواز الصورة -->
     <LinearLayout
         android:id="@+id/infoBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
         android:background="#FDEFEA"
         android:elevation="4dp"
         android:orientation="vertical"
@@ -70,7 +73,7 @@
             android:layout_height="wrap_content"
             android:text="@string/deep_field_stellar_deaths"
             android:textColor="#212121"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -83,12 +86,15 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-    <!-- شريط الأزرار Previous و Next -->
+    <!-- 4. شريط الأزرار: بنفس الهامش الجانبي 24dp ومرتفع 36dp عن أزرار الجوال السفلية -->
     <LinearLayout
         android:id="@+id/buttonsLayout"
-        android:layout_width="match_parent"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
         android:orientation="horizontal"
         android:weightSum="2"
         app:layout_constraintBottom_toBottomOf="parent"
