@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">MOB1_Mid_Exam_Deema_AL_Maqadma</string>
+    <string name="app_name">ArtSpace</string>
+    <string name="btn_previous">Previous</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_visit_website">Visit Website</string>
+    <string name="btn_back">Back to Gallery</string>
+    <string name="details_title">Artwork Details</string>
+    <string name="_1_6">1 / 6</string>
+    <string name="artwork_display">Artwork Display</string>
+    <string name="deep_field_stellar_deaths">Deep Field Stellar Deaths</string>
+    <string name="smacs_carin_2021">Smacs Carin (2021)</string>
+    <string name="artist_year_format">By: %1$s • Year: %2$s</string>
+    <string name="counter_format">%1$d / %2$d</string>
+    <string name="artist_info_format">%1$s (%2$s)</string>
 </resources>
