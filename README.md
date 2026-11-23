@@ -18,15 +18,15 @@
 
 | 1. Initial State (1 / 6 - Prev Disabled) | 2. Mid Navigation (Both Buttons Active) |
 | :---: | :---: |
-| <img src="Deema_AlMaqadma_ID_Screenshot_1.png" width="320" alt="Screenshot 1" /> | <img src="Deema_AlMaqadma_ID_Screenshot_2.png" width="320" alt="Screenshot 2" /> |
+| <img src="Deema_AL-Maqadma_2320230766_Screenshot_1.jpg" width="320" alt="Screenshot 1" /> | <img src="Deema_AL-Maqadma_2320230766_Screenshot_2.jpg" width="320" alt="Screenshot 2" /> |
 
 | 3. Boundary State (6 / 6 - Next Disabled) | 4. Landscape Mode (State Preserved) |
 | :---: | :---: |
-| <img src="Deema_AlMaqadma_ID_Screenshot_3.png" width="320" alt="Screenshot 3" /> | <img src="Deema_AlMaqadma_ID_Screenshot_4.png" width="320" alt="Screenshot 4" /> |
+| <img src="Deema_AL-Maqadma_2320230766_Screenshot_3.jpg" width="320" alt="Screenshot 3" /> | <img src="Deema_AL-Maqadma_2320230766_Screenshot_4.jpg" width="320" alt="Screenshot 4" /> |
 
 | 5. Details Activity (Explicit Intent) | 6. External Browser (Implicit Intent) |
 | :---: | :---: |
-| <img src="Deema_AlMaqadma_ID_Screenshot_5.png" width="320" alt="Screenshot 5" /> | <img src="Deema_AlMaqadma_ID_Screenshot_6.png" width="320" alt="Screenshot 6" /> |
+| <img src="Deema_AL-Maqadma_2320230766_Screenshot_5.jpg" width="320" alt="Screenshot 5" /> | <img src="Deema_AL-Maqadma_2320230766_Screenshot_6.jpg" width="320" alt="Screenshot 6" /> |
 
 ---
 
